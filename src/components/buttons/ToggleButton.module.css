@@ -1,0 +1,34 @@
+.container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 60vw;
+  height: 5vh;
+  background-color: #f0f0f0;
+  border-radius: 12px;
+  position: relative;
+  margin-bottom: 12px;
+  border: 1px solid #d2d2d2;
+}
+
+.flexEnd {
+  justify-content: end !important;
+}
+
+.flexStart {
+  justify-content: start!important;
+}
+
+.toggleButton {
+  width: 30vw;
+  height: 3.5vh;
+  margin-left: 6px;
+  margin-right: 6px;
+  border-radius: 10px;
+  border: none;
+  background-color: #0E1525;
+  color: #fff;
+  outline: none;
+  font-weight: 550;
+}
+

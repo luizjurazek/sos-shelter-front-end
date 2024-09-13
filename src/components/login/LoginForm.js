@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Style from "../../css/LoginForm.module.css";
 import logoGoogle from "../../assets/img/logoGoogle.svg";
+import FuncDoLogin from "../login/FuncDologin"
 
 export default function LoginForm() {
   const [email, setEmail] = useState("");
@@ -8,12 +9,6 @@ export default function LoginForm() {
 
   function setInputs(e, setInput) {
     setInput(e.target.value);
-  }
-
-  function submitLoginButton(){
-    // criar a regra de login aqui
-    console.log(email)
-    console.log(password)
   }
 
   return (
@@ -24,7 +19,6 @@ export default function LoginForm() {
           <p>Welcome back! Please enter your details</p>
         </div>
 
-        {/* Form */}
         <section className={Style.FormSection}>
           <label for="email">Email</label>
           <input
@@ -44,12 +38,11 @@ export default function LoginForm() {
               setInputs(e, setPassword);
             }}
           />
-          <a href="/">Forgot password</a>
+          <a className={Style.forgotPasswordLink} href="/">Forgot password</a>
         </section>
 
-        {/* Botoes de login e sign */}
         <div className={Style.btnSection}>
-          <button className={Style.btnLogin} onClick={submitLoginButton}>Login</button>
+          <button className={Style.btnLogin} onClick={''}>Login</button>
           <button className={Style.btnLoginGoogle}>
             <img src={logoGoogle} alt="Logo do google" width={20} />
             Login with Google
