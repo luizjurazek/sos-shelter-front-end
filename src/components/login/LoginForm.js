@@ -1,18 +1,40 @@
 import React, { useState } from "react";
 import Style from "../../css/LoginForm.module.css";
 import logoGoogle from "../../assets/img/logoGoogle.svg";
-import FuncDoLogin from "../login/FuncDologin"
+import PostData from "./PostData";
+import HandleResponse from "./HandleResponse";
+import SimpleModal from "../Modal/SimpleModal";
+import successIcon from "../../assets/img/successIcon.svg";
+import failureIcon from "../../assets/img/failureIcon.svg";
 
 export default function LoginForm() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [response, setResponse] = useState();
+  const [modalIsOpen, setModalIsOpen] = useState(false);
 
   function setInputs(e, setInput) {
     setInput(e.target.value);
   }
 
+  function closeModal() {
+    setModalIsOpen(false);
+  }
+
+  async function HandleLogin() {
+    try {
+      const res = await PostData(email, password);
+      setResponse(res);
+      HandleResponse(res);
+      setModalIsOpen(true);
+    } catch (error) {
+      console.error("Error during login", error);
+    }
+  }
+
   return (
     <>
+      {modalIsOpen && <SimpleModal img={response.error ? failureIcon : successIcon} text={response.message} onClose={closeModal} />}
       <section className={Style.container}>
         <div className={Style.textSection}>
           <h2>Welcome back</h2>
@@ -38,11 +60,15 @@ export default function LoginForm() {
               setInputs(e, setPassword);
             }}
           />
-          <a className={Style.forgotPasswordLink} href="/">Forgot password</a>
+          <a className={Style.forgotPasswordLink} href="/">
+            Forgot password
+          </a>
         </section>
 
         <div className={Style.btnSection}>
-          <button className={Style.btnLogin} onClick={''}>Login</button>
+          <button className={Style.btnLogin} onClick={HandleLogin}>
+            Login
+          </button>
           <button className={Style.btnLoginGoogle}>
             <img src={logoGoogle} alt="Logo do google" width={20} />
             Login with Google
