@@ -1,10 +1,9 @@
 import React, { useState } from "react";
 import LoginForm from "../../components/login/LoginForm";
-import SignIn from "../../components/signIn/SignInForm";
-import Style from "../../css/LoginPage.module.css";
+import SignUp from "../../components/signUp/SignUpForm";
+import Style from "../loginPage/LoginPage.module.css";
 import ToggleButton from "../../components/buttons/ToggleButton";
 import LogoShelter from "../../components/logo/LogoShelter";
-
 
 export default function LoginPage() {
   const [toggleForm, setToggleForm] = useState(true);
@@ -12,9 +11,9 @@ export default function LoginPage() {
   return (
     <>
       <section className={Style.container}>
-        <LogoShelter/>
-        <ToggleButton toggleForm={toggleForm} setToggleForm={setToggleForm} textTrue="Login" textFalse="Sign In"/>
-        {toggleForm ? <LoginForm/> : <SignIn/>}
+        <LogoShelter />
+        <ToggleButton toggleForm={toggleForm} setToggleForm={setToggleForm} textTrue="Login" textFalse="Sign Up" />
+        {toggleForm ? <LoginForm setToggleForm={setToggleForm}/> : <SignUp />}
       </section>
     </>
   );

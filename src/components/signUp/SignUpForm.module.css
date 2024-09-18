@@ -65,11 +65,11 @@
   font-size: 14px;
 }
 
-.btnSection .btnSignIn {
+.btnSection .btnsignUp {
   background-color: #0E1525;
   color: #fff;
 }
 
-.btnSection .btnSignInGoogle {
+.btnSection .btnsignUpGoogle {
   border: 1px solid #D2D2D2;
 }

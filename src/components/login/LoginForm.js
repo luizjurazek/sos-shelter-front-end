@@ -1,13 +1,17 @@
 import React, { useState } from "react";
-import Style from "../../css/LoginForm.module.css";
+import { useNavigate } from "react-router-dom";
+
+import Style from "../login/LoginForm.module.css";
 import logoGoogle from "../../assets/img/logoGoogle.svg";
 import PostData from "./PostData";
-import HandleResponse from "./HandleResponse";
 import SimpleModal from "../Modal/SimpleModal";
 import successIcon from "../../assets/img/successIcon.svg";
 import failureIcon from "../../assets/img/failureIcon.svg";
+import setItemLocalStorage from "../../utils/setItemLocalStorage";
 
-export default function LoginForm() {
+export default function LoginForm({ setToggleForm }) {
+  const navigate = useNavigate();
+
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [response, setResponse] = useState();
@@ -25,8 +29,16 @@ export default function LoginForm() {
     try {
       const res = await PostData(email, password);
       setResponse(res);
-      HandleResponse(res);
       setModalIsOpen(true);
+      if (res.error === false) {
+        setItemLocalStorage("id_user", res.id_user);
+        setItemLocalStorage("email_user", res.email);
+        setItemLocalStorage("token_user", res.token);
+
+        setTimeout(() => {
+          navigate("/");
+        }, 2000);
+      }
     } catch (error) {
       console.error("Error during login", error);
     }
@@ -74,7 +86,7 @@ export default function LoginForm() {
             Login with Google
           </button>
           <p>
-            Don't have an account? <a href="/">Sign up for free</a>
+            Don't have an account? <span onClick={() => setToggleForm(false)}>Sign up for free</span>
           </p>
         </div>
       </section>

@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import Style from "../../css/SignInForm.module.css";
+import Style from "../signUp/SignUpForm.module.css";
 import logoGoogle from "../../assets/img/logoGoogle.svg";
 
-export default function SignIn() {
+export default function SignUp() {
   const [name, setName] = useState();
   const [birthday, setBirthday] = useState();
   const [email, setEmail] = useState();
@@ -45,10 +45,10 @@ export default function SignIn() {
 
         {/* Botoes de login e sign */}
         <div className={Style.btnSection}>
-          <button className={Style.btnSignIn} onClick={signSubmitedButton}>
+          <button className={Style.btnsignUp} onClick={signSubmitedButton}>
             Sign In
           </button>
-          <button className={Style.btnSignInGoogle}>
+          <button className={Style.btnsignUpGoogle}>
             <img src={logoGoogle} alt="Logo do google" width={20} />
             Sign in With Google
           </button>

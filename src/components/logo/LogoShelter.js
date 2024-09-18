@@ -2,7 +2,7 @@ import React from "react";
 import Style from "../logo/LogoShelter.module.css"
 import LogoShelterSvg from "../../assets/img/logoShelter.svg"
 
-export default function LogoShelter() {
+export default function LogoShelter(props) {
   return (
     <>
       <section className={Style.container}>
