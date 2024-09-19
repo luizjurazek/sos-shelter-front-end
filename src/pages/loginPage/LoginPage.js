@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import LoginForm from "../../components/login/LoginForm";
-import SignUp from "../../components/signUp/SignUpForm";
+import LoginForm from "../../components/LoginPage/login/LoginForm";
+import SignUp from "../../components/LoginPage/signUp/SignUpForm";
 import Style from "../loginPage/LoginPage.module.css";
 import ToggleButton from "../../components/buttons/ToggleButton";
 import LogoShelter from "../../components/logo/LogoShelter";

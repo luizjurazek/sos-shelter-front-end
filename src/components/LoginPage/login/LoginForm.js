@@ -2,12 +2,12 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 import Style from "../login/LoginForm.module.css";
-import logoGoogle from "../../assets/img/logoGoogle.svg";
+import logoGoogle from "../../../assets/img/logoGoogle.svg";
 import PostData from "./PostData";
-import SimpleModal from "../Modal/SimpleModal";
-import successIcon from "../../assets/img/successIcon.svg";
-import failureIcon from "../../assets/img/failureIcon.svg";
-import setItemLocalStorage from "../../utils/setItemLocalStorage";
+import SimpleModal from "../../Modal/SimpleModal";
+import successIcon from "../../../assets/img/successIcon.svg";
+import failureIcon from "../../../assets/img/failureIcon.svg";
+import setItemLocalStorage from "../../../utils/setItemLocalStorage";
 
 export default function LoginForm({ setToggleForm }) {
   const navigate = useNavigate();

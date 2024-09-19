@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Style from "../signUp/SignUpForm.module.css";
-import logoGoogle from "../../assets/img/logoGoogle.svg";
+import logoGoogle from "../../../assets/img/logoGoogle.svg";
 
 export default function SignUp() {
   const [name, setName] = useState();
