@@ -1,5 +1,5 @@
 export default async function PostData(email, password) {
-  const api = "http://localhost:3030";
+  const api = process.env.REACT_APP_API_URL;
 
   const data = {
     email: email,

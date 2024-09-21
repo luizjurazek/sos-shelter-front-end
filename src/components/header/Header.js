@@ -26,7 +26,7 @@ export default function Header() {
                 <a href="/">Home</a>
               </li>
               <li>
-                <a href="/shelter">Shelters</a>
+                <a href="/shelters">Shelters</a>
               </li>
               <li>
                 <a href="/people">People</a>

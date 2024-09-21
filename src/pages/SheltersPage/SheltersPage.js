@@ -5,9 +5,11 @@ import SheltersElement from "../../components/SheltersPage/SheltersElement/Shelt
 export default function SheltersPage() {
   return (
     <>
-      <Header />
-      <SearchForm placeholderText={"Search"}/>
-      <SheltersElement />
+      <div style={{backgroundColor: "#F0F0F0", height: "100vh"}}>
+        <Header />
+        <SearchForm placeholderText={"Search"} />
+        <SheltersElement />
+      </div>
     </>
   );
 }
