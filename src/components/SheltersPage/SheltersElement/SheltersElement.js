@@ -1,4 +1,6 @@
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
+
 import Style from "./SheltersElement.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
@@ -19,6 +21,12 @@ export default function SheltersElement() {
     }
   }
 
+  const navigate = useNavigate(); // Hook para navegação
+
+  const handleShelterClick = (id) => {
+    navigate(`/shelter/${id}`); // Redireciona para a página do shelter específico
+  };
+
   useEffect(() => {
     handleResponse();
   }, []);
@@ -34,7 +42,7 @@ export default function SheltersElement() {
             ) : (
               shelters.map((shelter) => {
                 return (
-                  <div className={Style.shelter} key={shelter.id}>
+                  <div className={Style.shelter} key={shelter.id} onClick={() => handleShelterClick(shelter.id)}>
                     <div>
                       <h3 className={Style.shelterName}>{shelter.name}</h3>
                       <p className={Style.shelteInfo}>Current occupancy: {shelter.current_occupancy}</p>

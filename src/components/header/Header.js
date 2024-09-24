@@ -11,13 +11,17 @@ export default function Header() {
   return (
     <>
       <header className={Style.container}>
-        <div className={Style.logo}>S.O.S Shelter</div>
+        <div className={Style.logo}>
+          <a href="/">S.O.S Shelter</a>
+        </div>
         <button className={Style.menuButton} onClick={toggleMenu}>
           ☰
         </button>
         <div className={`${Style.sideMenu} ${isOpen ? Style.open : ""}`}>
           <div className={Style.closeButtonContainer}>
-            <button className={Style.menuButton} onClick={toggleMenu}>X</button>
+            <button className={Style.menuButton} onClick={toggleMenu}>
+              X
+            </button>
             <div className={Style.logo}>S.O.S Shelter</div>
           </div>
           <nav>
