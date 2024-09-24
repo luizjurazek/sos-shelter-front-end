@@ -6,6 +6,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import GetData from "./GetData";
 
+import ProgressBar from "../../bar/ProgressBar/ProgressBar";
+
 export default function SheltersElement() {
   const [shelters, setShelters] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -31,6 +33,8 @@ export default function SheltersElement() {
     handleResponse();
   }, []);
 
+
+
   return (
     <>
       <div className={Style.container}>
@@ -45,8 +49,7 @@ export default function SheltersElement() {
                   <div className={Style.shelter} key={shelter.id} onClick={() => handleShelterClick(shelter.id)}>
                     <div>
                       <h3 className={Style.shelterName}>{shelter.name}</h3>
-                      <p className={Style.shelteInfo}>Current occupancy: {shelter.current_occupancy}</p>
-                      <p>Max capacity: {shelter.max_capacity}</p>
+                      <ProgressBar use={shelter.current_occupancy} limit={shelter.max_capacity} text="Shelter Occupation"/>
                     </div>
                     <div className={Style.containerArrowIcon}>
                       <FontAwesomeIcon icon={faArrowRight} />
