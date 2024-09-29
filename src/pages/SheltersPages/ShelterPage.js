@@ -12,8 +12,8 @@ export default function ShelterPage() {
     <>
       <div style={{ backgroundColor: "#F0F0F0", height: "100vh" }}>
         <Header />
-        <SearchForm placeholderText={"Search"} />
-        <ShelterDetails id={id}/>
+        {/* <SearchForm placeholderText={"Search"} /> */}
+        <ShelterDetails id={id} />
       </div>
     </>
   );

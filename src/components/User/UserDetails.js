@@ -7,7 +7,7 @@ export default function UserDetails({ user }) {
 
   return (
     <div className={Style.profileContainer}>
-      <h2 className={Style.adminText}>Admin</h2>
+      <p className={Style.adminText}>Administrator</p>
       <div className={Style.profileHeader}>
         <img src={UserImg} alt="User Profile" className={Style.profileImage} />
         <h2 className={Style.profileName}>{user.name} {user.lastname}</h2>

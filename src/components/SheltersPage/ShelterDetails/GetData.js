@@ -1,11 +1,12 @@
 export default async function GetData(id) {
   const api = process.env.REACT_APP_API_URL;
-  console.log(api)
+  const token = localStorage.getItem("token_user")
 
   const requestData = {
     method: "GET",
     headers: {
       "Content-Type": "application/json",
+      "authorization": token
     },
   };
 

@@ -1,4 +1,4 @@
-.profileContainer {
+.container {
   max-width: 600px;
   margin: 0 auto;
   padding: 20px;
@@ -8,50 +8,38 @@
   flex-direction: column;
 }
 
-.profileHeader {
-  text-align: center;
-  margin-bottom: 20px;
+.mapContainer {
+  max-width: 600px;
+  max-height: 600px;
 }
 
-.adminText {
+
+.addressTitle {
   font-size: 1.5em;
   margin-top: 10px;
   color: #333;
   font-weight: 500;
 }
 
-.profileImage {
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 3px solid #0E1525; /* cor de destaque */
-}
-
-.profileName {
-  font-size: 1.5em;
-  margin-top: 10px;
-  color: #333;
-}
-
-.profileDetails {
+.addressDetails {
   display: flex;
   flex-direction: column;
   gap: 15px;
+  margin-top: 15px;
 }
 
-.profileItem {
+.addressItem {
   display: flex;
   justify-content: space-between;
   padding: 10px;
   border-bottom: 1px solid #e0e0e0;
 }
 
-.profileItem label {
+.addressItem label {
   font-weight: bold;
   color: #555;
 }
 
-.profileItem span {
+.addressItem span {
   color: #777;
 }
