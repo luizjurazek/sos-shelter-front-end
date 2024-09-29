@@ -7,7 +7,6 @@ import ShelterDetails from "../../components/SheltersPage/ShelterDetails/Shelter
 
 export default function ShelterPage() {
   const { id } = useParams();
-  console.log(id);
 
   return (
     <>

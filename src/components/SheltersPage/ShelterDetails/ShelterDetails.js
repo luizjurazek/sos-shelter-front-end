@@ -1,5 +1,8 @@
 import { useEffect, useState } from "react";
 import GetData from "./GetData";
+import Style from "../ShelterDetails/ShelterDetails.module.css"
+import UserDetails from "../../User/UserDetails";
+
 
 export default function ShelterDetails({ id }) {
   const [shelterDetails, setShelterDetails] = useState();
@@ -23,11 +26,14 @@ export default function ShelterDetails({ id }) {
 
   return (
     <>
-      <div>
+      <div className={Style.container}>
         {loading ? (
           <div>Loading...</div>
         ) : (
-          <div>Shelter aqui</div>
+          <div className={Style.shelterInfo}>
+            <h1 className={Style.shelterMainTitle}>Shelter Details</h1>
+            <UserDetails user={shelterDetails.ShelterAdmin}/>
+          </div>
         )}
       </div>
     </>

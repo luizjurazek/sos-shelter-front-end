@@ -3,7 +3,7 @@ import Style from "./ProgressBar.module.css";
 
 export default function ProgressBar({ use, limit, text }) {
   const percent = (use / limit) * 100;
-  console.log(percent);
+  console.log(percent)
   return (
     <div className={Style.barContainer}>
       <div className={Style.titleBar}>{text}</div>

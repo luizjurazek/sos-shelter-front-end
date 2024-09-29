@@ -11,6 +11,10 @@
   font-size: 14px;
 }
 
+.titleBar {
+  margin-bottom: 5px;
+}
+
 .filledBar {
   padding: 5px;
   height: 12px; 

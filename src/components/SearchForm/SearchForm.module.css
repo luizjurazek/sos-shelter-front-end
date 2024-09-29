@@ -5,7 +5,7 @@
 }
 
 .SearchElement {
-  width: 95vw;
+  width: 92vw;
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
@@ -31,4 +31,10 @@
   border: none;
   cursor: pointer;
   border-radius: 0 10px 10px 0;
+}
+
+@media screen and (max-width: 768px) {
+  .SearchElement {
+    width: 95vw;
+  }
 }

@@ -1,0 +1,21 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.shelterInfo {
+  width: 90vw;
+  border: 1px solid #d8d8d8;
+  border-radius: 10px;
+  background-color: #fff;
+  padding: 10px;
+  height: 80vh;
+}
+
+.shelterMainTitle {
+  padding: 5px 20px 5px 20px;
+  font-size: 1.8em;
+  color: #333;
+}
