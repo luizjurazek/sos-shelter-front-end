@@ -1,7 +1,6 @@
 import Style from "../Address/AddressDetails.module.css";
 
 export default function AddressDetails({ address }) {
-  console.log(address);
   return (
     <div className={Style.container}>
       <p className={Style.addressTitle}>Address</p>

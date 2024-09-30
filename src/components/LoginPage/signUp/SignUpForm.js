@@ -1,24 +1,39 @@
 import React, { useState } from "react";
 import Style from "../signUp/SignUpForm.module.css";
 import logoGoogle from "../../../assets/img/logoGoogle.svg";
+import PostData from "./PostData";
 
 export default function SignUp() {
   const [name, setName] = useState();
+  const [lastname, setLastname] = useState();
   const [birthday, setBirthday] = useState();
   const [email, setEmail] = useState();
+  const [phonenumber, setPhonenumber] = useState();
   const [password, setPassword] = useState();
   const [confirmPassword, setconfirmPassword] = useState();
+
+  const [response, setResponse] = useState();
 
   function setInputs(e, setInput) {
     setInput(e.target.value);
   }
 
-  function signSubmitedButton() {
-    console.log(name);
-    console.log(birthday);
-    console.log(email);
-    console.log(password);
-    console.log(confirmPassword);
+  async function signSubmitedButton() {
+    const data = {
+      name,
+      lastname,
+      birthday,
+      email,
+      phonenumber,
+      password,
+    };
+
+    try {
+      const res = await PostData(data);
+      console.log(res);
+    } catch (error) {
+      console.error("Error during login", error);
+    }
   }
 
   return (
@@ -33,10 +48,14 @@ export default function SignUp() {
         <section className={Style.FormSection}>
           <label for="name">Name</label>
           <input type="text" placeholder="Enter your name" id="name" onChange={(e) => setInputs(e, setName)} />
+          <label for="Lastname">Lastname</label>
+          <input type="text" placeholder="Enter your lastname" id="lastanme" onChange={(e) => setInputs(e, setLastname)} />
           <label for="name">Birthday</label>
           <input type="date" placeholder="Enter your birthday" id="birthday" onChange={(e) => setInputs(e, setBirthday)} />
           <label for="email">Email</label>
           <input type="email" placeholder="Enter your email" id="email" onChange={(e) => setInputs(e, setEmail)} />
+          <label for="Phonenumber">Phonenumber</label>
+          <input type="text" placeholder="Enter your phonenumber" id="phonenumber" onChange={(e) => setInputs(e, setPhonenumber)} />
           <label for="password">Password</label>
           <input type="password" placeholder="Password" id="password" onChange={(e) => setInputs(e, setPassword)} />
           <label for="confirmPassword">Repeat your password</label>
