@@ -1,0 +1,44 @@
+.container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 20vh;
+  /* background-color: rgba(0, 0, 0, 0.5);  */
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  z-index: 1000; 
+}
+
+.textComponent {
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  width: 80vw;
+  max-width: 400px;
+  padding: 20px;
+  color: #fff;
+  font-size: 1.2em;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  margin-top: 20px;
+}
+
+.textComponent p {
+  margin: 0;
+  padding: 0;
+}
+
+.backgroundRed {
+  background-color: #d6716d;
+  border: 2px solid #a94442;
+}
+
+.backgroundGreen {
+  background-color: #83d483;
+  border: 2px solid #4cae4c;
+}
+
+.displayNone {
+  display: none;
+}
