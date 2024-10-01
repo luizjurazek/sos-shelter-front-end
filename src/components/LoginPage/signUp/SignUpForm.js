@@ -46,7 +46,7 @@ export default function SignUp() {
 
   return (
     <>
-      <section className={Style.container}>
+      <section className={Style.container} onClick={() => {setIsOpen(false)}}>
         <ModalResponse isOpen={isOpen} isError={response.error} errors={response.errors} message={response.message} />
         <div className={Style.textSection}>
           <h2>Welcome</h2>
@@ -54,7 +54,7 @@ export default function SignUp() {
         </div>
 
         {/* Form */}
-        <section className={Style.FormSection}>
+        <section className={Style.FormSection} >
           <label for="name">Name</label>
           <input type="text" placeholder="Enter your name" id="name" onChange={(e) => setInputs(e, setName)} />
           <label for="Lastname">Lastname</label>

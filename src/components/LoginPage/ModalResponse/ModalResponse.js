@@ -7,7 +7,7 @@ export default function ModalResponse({ isOpen, isError, errors, message }) {
       <div className={`${Style.textComponent} ${isError ? Style.backgroundRed : Style.backgroundGreen}`}>
         {isError ? (
           errors.map((error, index) => {
-            return <p key={index}>{error}</p>;
+            return <p key={index}>{index + 1}. {error}</p>;
           })
         ) : (
           <p>{message}</p>
