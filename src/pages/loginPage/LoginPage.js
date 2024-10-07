@@ -13,7 +13,7 @@ export default function LoginPage() {
       <section className={Style.container}>
         <LogoShelter />
         <ToggleButton toggleForm={toggleForm} setToggleForm={setToggleForm} textTrue="Login" textFalse="Sign Up" />
-        {toggleForm ? <LoginForm setToggleForm={setToggleForm}/> : <SignUp />}
+        {toggleForm ? <LoginForm setToggleForm={setToggleForm} /> : <SignUp setToggleForm={setToggleForm} />}
       </section>
     </>
   );
