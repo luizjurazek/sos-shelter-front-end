@@ -1,23 +1,25 @@
 import { useState, useEffect } from "react";
 import Style from "../CreateShelterForm/CreateShelterForm.module.css";
+
 import GetData from "./GetData";
+import PostData from "./PostData";
 
 export default function CreateShelterForm() {
   // Shelter info variables
-  const [shelterName, setShelterName] = useState();
-  const [maxCapacity, setMaxCapacity] = useState();
-  const [currentOccupancy, setCurrentOccupancy] = useState();
-  const [amountVolunteers, setAmountVolunteers] = useState();
-  const [admin, setAdmin] = useState();
+  const [name, setShelterName] = useState("");
+  const [maxCapacity, setMaxCapacity] = useState(0);
+  const [currentOccupancy, setCurrentOccupancy] = useState(0);
+  const [amountVolunteers, setAmountVolunteers] = useState(0);
+  const [admin, setAdmin] = useState("");
 
   // Address info variables
-  const [country, setCountry] = useState();
-  const [state, setState] = useState();
-  const [city, setCity] = useState();
-  const [street, setStreet] = useState();
-  const [zipcode, setZipcode] = useState();
-  const [number, setNumber] = useState();
-  const [complement, setComplement] = useState();
+  const [country, setCountry] = useState("");
+  const [state, setState] = useState("");
+  const [city, setCity] = useState("");
+  const [street, setStreet] = useState("");
+  const [zipcode, setZipcode] = useState("");
+  const [number, setNumber] = useState(0);
+  const [complement, setComplement] = useState("");
 
   // Function to await the loading of data
   const [loading, setLoading] = useState(true);
@@ -43,14 +45,14 @@ export default function CreateShelterForm() {
     setInput(e.target.value);
   }
 
-  async function handleSubmit(){
+  async function handleSubmit() {
     const shelterInfo = {
-      shelterName,
-      maxCapacity,
-      currentOccupancy,
-      amountVolunteers,
-      admin
-    }
+      name,
+      maxCapacity: parseInt(maxCapacity, 10),
+      currentOccupancy: parseInt(currentOccupancy, 10),
+      amountVolunteers: parseInt(amountVolunteers, 10),
+      admin: parseInt(admin, 10),
+    };
 
     const addressInfo = {
       country,
@@ -59,11 +61,15 @@ export default function CreateShelterForm() {
       street,
       zipcode,
       number,
-      complement
+      complement,
+    };
+    try {
+      const res = await PostData(shelterInfo, addressInfo);
+      console.log(res);
+    } catch (error) {
+      console.error("Error during login", error);
     }
-
-    console.log(shelterInfo)
-    console.log(addressInfo)
+    PostData(shelterInfo, addressInfo);
   }
 
   return (
@@ -79,19 +85,23 @@ export default function CreateShelterForm() {
           <input type="number" placeholder="Enter Current Occupancy" name="currentOccupancy" defaultValue={0} onChange={(e) => setInputs(e, setCurrentOccupancy)} />
           <label for="numberVolunteers">Number of volunteers</label>
           <input type="number" placeholder="Enter Number of volunteers" name="currentOccupancy" defaultValue={0} onChange={(e) => setInputs(e, setAmountVolunteers)} />
-          <label for="admin">Admin</label>
-          <select name="admin" onChange={(e) => setInputs(e, setAdmin)}>
-            <option disabled>Select an admin</option>
+          <label htmlFor="admin">Admin</label>
+          <select
+            name="admin"
+            value={admin} // Estado controlado
+            onChange={(e) => setAdmin(e.target.value)}
+          >
+            <option value="" disabled>
+              Select an admin
+            </option>
             {loading ? (
               <option>Loading...</option>
             ) : (
-              adminFree.map((admin) => {
-                return (
-                  <option key={admin.id} value={admin.id}>
-                    {admin.name} {admin.lastname}
-                  </option>
-                );
-              })
+              adminFree.map((admin) => (
+                <option key={admin.id} value={admin.id}>
+                  {admin.name} {admin.lastname}
+                </option>
+              ))
             )}
           </select>
         </section>
@@ -115,7 +125,9 @@ export default function CreateShelterForm() {
         </section>
 
         <section className={Style.btnSection}>
-          <button className={Style.btnLogin} onClick={handleSubmit}>Create shelter</button>
+          <button className={Style.btnLogin} onClick={handleSubmit}>
+            Create shelter
+          </button>
         </section>
       </div>
     </div>
