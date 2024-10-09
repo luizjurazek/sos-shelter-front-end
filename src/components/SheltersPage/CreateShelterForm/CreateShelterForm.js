@@ -51,8 +51,10 @@ export default function CreateShelterForm() {
       maxCapacity: parseInt(maxCapacity, 10),
       currentOccupancy: parseInt(currentOccupancy, 10),
       amountVolunteers: parseInt(amountVolunteers, 10),
-      admin: parseInt(admin, 10),
+      id_admin_shelter: parseInt(admin, 10),
     };
+
+    console.log(shelterInfo)
 
     const addressInfo = {
       country,
@@ -69,14 +71,12 @@ export default function CreateShelterForm() {
     } catch (error) {
       console.error("Error during login", error);
     }
-    PostData(shelterInfo, addressInfo);
   }
 
   return (
     <div className={Style.container}>
       <div className={Style.createElementCard}>
         <section className={Style.FormSection}>
-          <h3>Shelter information</h3>
           <label for="shelterName">Shelter name</label>
           <input type="text" placeholder="Enter Shelter name" name="shelterName" onChange={(e) => setInputs(e, setShelterName)} />
           <label for="maxCapacity">Maximum Capacity</label>
@@ -107,7 +107,6 @@ export default function CreateShelterForm() {
         </section>
 
         <section className={Style.FormSection}>
-          <h3>Address information</h3>
           <label for="country">Country</label>
           <input type="text" placeholder="Enter the country" name="country" onChange={(e) => setInputs(e, setCountry)} />
           <label for="state">State</label>
