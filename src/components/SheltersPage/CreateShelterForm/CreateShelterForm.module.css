@@ -1,0 +1,57 @@
+.container {
+  display: flex;
+  justify-content: center;
+}
+
+.createElementCard {
+  /* border: 1px solid red; */
+  width: 90vw;
+  margin-top: 10px;
+}
+
+.FormSection {
+  display: flex;
+  flex-direction: column;
+}
+
+.FormSection label {
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+
+.FormSection input,
+.FormSection select {
+  background-color: transparent;
+  border: 1px solid #D2D2D2;
+  border-radius: 5px;
+  padding: 12px;
+  margin-bottom: 15px;
+  outline: none;
+}
+
+.FormSection select option {
+  -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+.btnSection button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 35px;
+  text-align: center;
+  margin-bottom: 12px;
+  border-radius: 5px;
+  border: none;
+  font-weight: 550;
+  font-size: 14px;
+}
+
+.btnSection .btnLogin {
+  width: 100%;
+  background-color: #0E1525;
+  color: #fff;
+}
+
+

@@ -33,6 +33,9 @@ export default function Header() {
                 <a href="/shelters">Shelters</a>
               </li>
               <li>
+                <a href="/create-shelter">Create shelter</a>
+              </li>
+              <li>
                 <a href="/people">People</a>
               </li>
             </ul>
