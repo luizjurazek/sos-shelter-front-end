@@ -76,6 +76,28 @@
   left: 0;
 }
 
+@media (max-width: 767px) {
+  .closeButtonContainer {
+    flex-direction: row-reverse;
+    margin: 20px 20px 10px 20px;
+  }
+
+  .sideMenu ul {
+    margin: 10px 20px;
+  }
+
+
+  .sideMenu ul li {
+    display: flex;
+    align-items: center;
+  }
+
+  .sideMenu ul li a {
+    margin-left: 15px;
+  }
+}
+
+
 /* Estilo para desktop */
 @media (min-width: 768px) {
   /* Estilo geral para o container do menu */
