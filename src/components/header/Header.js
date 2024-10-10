@@ -1,5 +1,7 @@
 import { useState } from "react";
 import Style from "../header/Header.module.css";
+import Logo from "../../assets/img/logoShelter.svg";
+import { FaHome, FaHotel, FaPlusCircle, FaUsers } from "react-icons/fa";
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
@@ -12,7 +14,7 @@ export default function Header() {
     <>
       <header className={Style.container}>
         <div className={Style.logo}>
-          <a href="/">S.O.S Shelter</a>
+          <img src={Logo} />
         </div>
         <button className={Style.menuButton} onClick={toggleMenu}>
           ☰
@@ -27,15 +29,19 @@ export default function Header() {
           <nav>
             <ul>
               <li>
+                <FaHome className="icon" size={24}/>
                 <a href="/">Home</a>
               </li>
               <li>
+                <FaHotel className="icon" size={24}/>
                 <a href="/shelters">Shelters</a>
               </li>
               <li>
+                <FaPlusCircle className="icon" size={24}/>
                 <a href="/create-shelter">Create shelter</a>
               </li>
               <li>
+                <FaUsers className="icon" size={24}/>
                 <a href="/people">People</a>
               </li>
             </ul>

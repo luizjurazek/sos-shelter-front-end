@@ -8,9 +8,9 @@
   color: white;
 }
 
-.logo {
-  font-size: 24px;
-  font-weight: 550;
+.logo img {
+  max-width: 50px;
+  filter: invert(); /* Para alterar a cor da logo */
 }
 
 .logo a {
@@ -78,43 +78,107 @@
 
 /* Estilo para desktop */
 @media (min-width: 768px) {
-  .container {
-    flex-direction: row;
-  }
+  /* Estilo geral para o container do menu */
+.container {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 70px;
+  height: 100vh;
+  background-color: #0E1525;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 20px;
+  transition: width 0.3s ease;
+}
 
-  .closeButtonContainer {
-    display: none;
-  }
+.container:hover {
+  width: 250px; /* Aumenta o tamanho quando o hover é feito */
+}
 
-  .menuButton {
-    display: none;
-  }
+/* Estilo para a logo */
+.logo img {
+  max-width: 50px;
+  filter: invert(); /* Para alterar a cor da logo */
+}
 
-  .sideMenu {
-    position: static;
-    width: auto;
-    height: auto;
-    background-color: transparent;
-    color: white;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-  }
+/* Botão do menu (será oculto no desktop) */
+.menuButton {
+  display: none;
+}
 
-  .sideMenu ul {
-    margin: 0;
-    flex-direction: row;
-    align-items: center;
-    gap: 20px;
-  }
+/* Estilo para o menu lateral na versão desktop */
+.sideMenu {
+  position: relative;
+  left: 0;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  width: 100%;
+  transition: none;
+}
 
-  .sideMenu ul li {
-    margin: 0;
-  }
+.sideMenu nav {
+  width: 100%;
+}
 
-  .sideMenu ul li a {
-    color: white;
-    font-size: 16px;
-  }
+.sideMenu ul {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+  width: 100%;
+}
+
+.sideMenu ul li {
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  padding: 0;
+  margin-left: 23px;
+  height: 30px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.sideMenu ul li:hover a {
+  font-weight: 600;
+}
+
+
+
+/* Inicialmente o texto está escondido fora da tela */
+.sideMenu ul li a {
+  display: none;
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  opacity: 0;
+  transform: translateX(-20px); /* Começa deslocado à esquerda */
+  transition: transform 0.3s ease, opacity 0.3s ease; /* Suaviza a transição */
+  margin-left: 10px;
+}
+
+/* Ao fazer hover no container, os textos aparecem suavemente */
+.container:hover .sideMenu ul li a {
+  display: flex;
+  opacity: 1;
+  transform: translateX(0); /* Traz o texto para a posição correta */
+}
+
+/* Exibir o texto apenas ao passar o mouse */
+.container:hover .sideMenu ul li a {
+  width: fit-content;
+}
+
+/* Alinhar o texto e o ícone sem mover o ícone */
+.container:hover ul li {
+  justify-content: start; /* Mantém os ícones alinhados à esquerda */
+}
+
+/* Ocultar o closeButtonContainer no desktop */
+.closeButtonContainer {
+  display: none;
+}
 }
