@@ -3,7 +3,7 @@
   z-index: 99999;
 }
 
-@media (min-width: 1280px) {
+@media (min-width: 768px) {
   .container {
     background-color: #F0F0F0;
     display: flex;

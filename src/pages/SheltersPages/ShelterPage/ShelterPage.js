@@ -1,6 +1,5 @@
 import { useParams } from "react-router-dom";
-
-import Style from "../ShelterPage/ShelterPage.module.css"
+import defaultStyle from "../../Pages.module.css"
 
 // Components
 import Header from "../../../components/header/Header";
@@ -11,11 +10,11 @@ export default function ShelterPage() {
 
   return (
     <>
-      <div className={Style.container}>
-        <div className={Style.headerContent}>
+      <div className={defaultStyle.container}>
+        <div className={defaultStyle.headerContent}>
           <Header />
         </div>
-        <div className={Style.mainContent}>
+        <div className={defaultStyle.mainContent}>
           <ShelterDetails id={id} />
         </div>
       </div>

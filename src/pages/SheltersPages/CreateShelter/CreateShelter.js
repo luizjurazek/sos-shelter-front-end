@@ -1,15 +1,15 @@
 import Header from "../../../components/header/Header";
 import CreateShelterForm from "../../../components/SheltersPage/CreateShelterForm/CreateShelterForm";
-import Style from "../CreateShelter/CreateShelter.module.css"
+import defaultStyle from "../../Pages.module.css"
 
 export default function CreateShelter() {
   return (
     <>
-      <div className={Style.container}>
-        <div className={Style.headerContent}>
+      <div className={defaultStyle.container}>
+        <div className={defaultStyle.headerContent}>
           <Header />
         </div>
-        <div className={Style.mainContent}>
+        <div className={defaultStyle.mainContent}>
           <CreateShelterForm />
         </div>
       </div>
