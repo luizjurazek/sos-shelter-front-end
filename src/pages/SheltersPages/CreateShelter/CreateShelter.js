@@ -1,12 +1,18 @@
+import Header from "../../../components/header/Header";
+import CreateShelterForm from "../../../components/SheltersPage/CreateShelterForm/CreateShelterForm";
+import Style from "../CreateShelter/CreateShelter.module.css"
 
-import Header from "../../../components/header/Header"
-import CreateShelterForm from "../../../components/SheltersPage/CreateShelterForm/CreateShelterForm"
-
-export default function CreateShelter(){
+export default function CreateShelter() {
   return (
-  <>
-    <Header />
-    <CreateShelterForm />
-  </>
-  )
+    <>
+      <div className={Style.container}>
+        <div className={Style.headerContent}>
+          <Header />
+        </div>
+        <div className={Style.mainContent}>
+          <CreateShelterForm />
+        </div>
+      </div>
+    </>
+  );
 }

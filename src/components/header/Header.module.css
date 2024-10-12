@@ -102,6 +102,7 @@
 @media (min-width: 768px) {
   /* Estilo geral para o container do menu */
 .container {
+  z-index: 99999;
   position: fixed;
   left: 0;
   top: 0;
@@ -167,7 +168,6 @@
 .sideMenu ul li:hover a {
   font-weight: 600;
 }
-
 
 
 /* Inicialmente o texto está escondido fora da tela */
