@@ -18,7 +18,7 @@
 .filledBar {
   padding: 5px;
   height: 12px; 
-  background-color: #253761; 
+  background-color: #1d1d1d; 
   width: 0; 
   border-radius: 5px; 
   transition: width 0.3s; 
