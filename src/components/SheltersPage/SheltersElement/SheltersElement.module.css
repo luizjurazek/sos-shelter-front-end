@@ -2,13 +2,15 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 15px;
 }
 
 .sheltersElement {
-  width: 95vw;
+  width: 100%;
 }
 
 .sheltersContainer {
+  width: 100%;
   margin-top: 15px;
   display: flex;
   flex-direction: column;
@@ -37,7 +39,7 @@
 }
 
 .containerArrowIcon {
-  color: #0E1525;
+  color: #161616;
   display: none;
 }
 
@@ -47,15 +49,16 @@
 }
 
 
-@media screen and (min-width: 1080px) {
+@media screen and (min-width: 768px) {
   .sheltersContainer {
     flex-wrap: wrap;
     flex-direction: row;
-    justify-content: start;
+    justify-content: space-between;
   }
 
   .shelter {
     flex-basis: calc(33.333% - 50px); /* Cada abrigo começa com 1/3 do espaço */
     max-width: calc(33.333% - 40px); /* Limita a largura máxima */
+    z-index: inherit;
   }
 }
