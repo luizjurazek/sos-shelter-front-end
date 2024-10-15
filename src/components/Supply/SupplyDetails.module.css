@@ -1,0 +1,54 @@
+.supplyContainer {
+  width: 28%;
+  max-height: 430px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #CFCFCF;
+}
+
+.mainTitle {
+  font-size: 1.5em;
+  margin-top: 10px;
+  color: #333;
+  font-weight: 500;
+}
+
+/* Configura o layout de grid para os títulos */
+.headTitles,
+.supplyItem {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr; /* Define a largura das colunas */
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.headTitles {
+  font-weight: bold;
+  color: #555;
+  margin-top: 15px;
+  margin-bottom: 5px;
+  padding: 0px 20px 0px 10px;
+}
+
+.itensContainer {
+  overflow-y: auto;
+}
+
+.supplyItem {
+  padding: 10px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.supplyItem p {
+  color: #777777;
+  margin: 0;
+}
+
+.supplyQuantity,
+.supplyUnit {
+  text-align: right;
+}

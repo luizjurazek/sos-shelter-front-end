@@ -1,16 +1,13 @@
 .container {
-  max-width: 600px;
+  width: 28%;
   margin: 0 auto;
   padding: 20px;
   background-color: #fff;
   border-radius: 10px;
   display: flex;
+  flex-wrap: wrap;
   flex-direction: column;
-}
-
-.mapContainer {
-  max-width: 600px;
-  max-height: 600px;
+  border: 1px solid #CFCFCF;
 }
 
 

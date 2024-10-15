@@ -3,6 +3,7 @@ import GetData from "./GetData";
 import Style from "../ShelterDetails/ShelterDetails.module.css";
 import UserDetails from "../../User/UserDetails";
 import AddressDetails from "../../Address/AddressDetails";
+import SupplyDetails from "../../Supply/SupplyDetails";
 
 export default function ShelterDetails({ id }) {
   const [shelterDetails, setShelterDetails] = useState();
@@ -31,8 +32,14 @@ export default function ShelterDetails({ id }) {
         ) : (
           <div className={Style.shelterInfo}>
             <h1 className={Style.shelterMainTitle}>Shelter Details</h1>
-            <UserDetails user={shelterDetails.ShelterAdmin} />
-            <AddressDetails address={shelterDetails.ShelterAddress} />
+            <div style={{display: "flex", flexDirection: "row", flexWrap: "wrap", justifyContent: "space-between"}}>
+              <UserDetails user={shelterDetails.ShelterAdmin} />
+              <AddressDetails address={shelterDetails.ShelterAddress}/>
+              <SupplyDetails id_shelter={id}/>
+            </div>
+            <div>
+              {/* <PeopleDetails people={} /> */}
+            </div>
           </div>
         )}
       </div>

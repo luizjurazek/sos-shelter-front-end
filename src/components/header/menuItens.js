@@ -1,4 +1,4 @@
-import { FaHome, FaHotel, FaAngleRight } from "react-icons/fa";
+import { FaHome,  FaHotel, FaAngleRight, FaMinus   } from "react-icons/fa";
 
 const menuItems = [
   {
@@ -15,7 +15,12 @@ const menuItems = [
       {
         name: "Create shelter",
         path: "/create-shelter",
-        icon: FaAngleRight,
+        icon: FaMinus,
+      },
+      {
+        name: "Remove shelter",
+        path: "/create-shelter",
+        icon: FaMinus,
       }
     ],
   },
