@@ -17,12 +17,13 @@
 .logo .logoLink, 
 .sideMenu .menu .menuItem .item,
 .sideMenu .menu .submenu .subItem .item {
-  text-decoration: none;
-  color: #fff;
   display: flex;
-  justify-content: start;
   flex-direction: row;
+  text-decoration: none;
+  justify-content: start;
   flex-wrap: nowrap;
+  align-items: center;
+  color: #fff;
 }
 
 .menuButton {
@@ -96,6 +97,38 @@
 .container .logo .logoLink .logoText {
   display: none;
 }
+
+.sideMenu .menu .menuItem .item p,
+.sideMenu .menu .submenu .subItem .item {
+  display: none;
+  font-size: 16px;
+  opacity: 0;
+  transform: translateX(-20px); 
+  transition: transform  1s ease, opacity  1s ease;
+  margin-left: 10px;
+}
+
+.container:hover .sideMenu .menu .menuItem .item p,
+.container:hover .logo .logoLink .logoText {
+  display: flex;
+  align-items: center;
+  opacity: 1;
+  transform: translateX(0); 
+}
+
+.container:hover .sideMenu .menu .menuItem .submenu .subItem .item {
+  display: flex;
+  opacity: 1;
+  transform: translateX(0);
+  transition: transform 1s ease, opacity 1s ease;
+}
+
+.sideMenu .menu .menuItem .submenu .subItem .item {
+  opacity: 0;
+  transform: translateX(-20px);
+  transition: transform1s ease, opacity 1s ease;
+}
+
 
 @media (max-width: 767px) {
   .closeButtonContainer {

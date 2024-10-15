@@ -45,8 +45,8 @@ export default function Header() {
                       {item.children.map((subItem, subItemIndex) => (
                         <li className={Style.subItem} key={subItemIndex}>
                           <a className={Style.item} href={subItem.path}>
-                            <subItem.icon className="icon" size={22} /> {/* Usando o ícone diretamente */}
-                            {subItem.name}
+                            <subItem.icon className="icon" size={14} /> {/* Usando o ícone diretamente */}
+                            <p>{subItem.name}</p>
                           </a>
                         </li>
                       ))}
