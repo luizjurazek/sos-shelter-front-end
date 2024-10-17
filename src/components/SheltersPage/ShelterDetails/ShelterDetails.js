@@ -4,6 +4,7 @@ import Style from "../ShelterDetails/ShelterDetails.module.css";
 import UserDetails from "../../User/UserDetails";
 import AddressDetails from "../../Address/AddressDetails";
 import SupplyDetails from "../../Supply/SupplyDetails";
+import PeopleDetails from "../../People/PeopleDetails"
 
 export default function ShelterDetails({ id }) {
   const [shelterDetails, setShelterDetails] = useState();
@@ -13,6 +14,7 @@ export default function ShelterDetails({ id }) {
     try {
       const res = await GetData(id);
       setShelterDetails(res.shelter);
+      console.log(res)
     } catch (error) {
       console.error("Erro ao carregar os dados:", error);
     } finally {
@@ -38,7 +40,7 @@ export default function ShelterDetails({ id }) {
               <SupplyDetails id_shelter={id}/>
             </div>
             <div>
-              {/* <PeopleDetails people={} /> */}
+              <PeopleDetails people={''} />
             </div>
           </div>
         )}

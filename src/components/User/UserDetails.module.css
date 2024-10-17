@@ -57,3 +57,8 @@
 .profileItem span {
   color: #777;
 }
+
+.noAdminAvailable {
+  color: #777777;
+  padding: 10px;
+}

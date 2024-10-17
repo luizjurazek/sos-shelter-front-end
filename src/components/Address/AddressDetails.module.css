@@ -40,3 +40,8 @@
 .addressItem span {
   color: #777;
 }
+
+.noAddressAvailable {
+  color: #777777;
+  padding: 10px;
+}

@@ -9,6 +9,8 @@ export default function SupplyDetails({ id_shelter }) {
   async function handleResponse() {
     try {
       const res = await GetData(id_shelter);
+      console.log(res);
+      console.log(res.supplies);
       setSupplies(res.supplies);
     } catch (error) {
       console.error("Erro ao carregar os dados:", error);
@@ -24,26 +26,29 @@ export default function SupplyDetails({ id_shelter }) {
   return (
     <div className={Style.supplyContainer}>
       <p className={Style.mainTitle}>Supplies</p>
-      <div className={Style.headTitles}>
-        <p className={Style.supplyName}>Name</p>
-        <p className={Style.supplyQuantity}>Quantity</p>
-        <p className={Style.supplyUnit}>Unit</p>
-      </div>
-      <div className={Style.itensContainer}>
-        {loading ? (
-          <div>Loading...</div>
-        ) : (
-          supplies.map((item) => {
-            return (
+
+      {loading ? (
+        <div>Loading...</div>
+      ) : supplies === undefined ? (
+        <div className={Style.noSuppliesAvailable}>No supplies available.</div>
+      ) : (
+        <>
+          <div className={Style.headTitles}>
+            <p className={Style.supplyName}>Name</p>
+            <p className={Style.supplyQuantity}>Quantity</p>
+            <p className={Style.supplyUnit}>Unit</p>
+          </div>
+          <div className={Style.itensContainer}>
+            {supplies.map((item) => (
               <div className={Style.supplyItem} key={item.id}>
                 <p className={Style.supplyName}>{item.name}</p>
                 <p className={Style.supplyQuantity}>{item.quantity}</p>
                 <p className={Style.supplyUnit}>{item.unit}</p>
               </div>
-            );
-          })
-        )}
-      </div>
+            ))}
+          </div>
+        </>
+      )}
     </div>
   );
 }

@@ -52,3 +52,8 @@
 .supplyUnit {
   text-align: right;
 }
+
+.noSuppliesAvailable {
+  color: #777777;
+  padding: 10px;
+}
