@@ -2,7 +2,6 @@ import React, { useEffect } from "react";
 import { Loader } from "@googlemaps/js-api-loader";
 
 const GoogleMapApi = ({ shelterAddress }) => {
-  console.log(shelterAddress)
   useEffect(() => {
     const loader = new Loader({
       apiKey: process.env.REACT_APP_API_GOOGLE_MAPS_KEY,

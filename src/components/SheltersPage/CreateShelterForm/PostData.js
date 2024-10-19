@@ -22,8 +22,7 @@ export default async function PostData(shelterData, addressData) {
 
     // if the address was created with successfully
     shelterData["address"] = addressResult.address.id;
-
-    console.log(shelterData)
+    
     const shelterResponse = await fetch(`${api}/shelter/create-shelter`, createRequestOptions(shelterData));
     const shelterResult = await shelterResponse.json();
 

@@ -54,7 +54,6 @@ export default function CreateShelterForm() {
       id_admin_shelter: parseInt(admin, 10),
     };
 
-    console.log(shelterInfo)
 
     const addressInfo = {
       country,
@@ -67,7 +66,6 @@ export default function CreateShelterForm() {
     };
     try {
       const res = await PostData(shelterInfo, addressInfo);
-      console.log(res);
     } catch (error) {
       console.error("Error during login", error);
     }

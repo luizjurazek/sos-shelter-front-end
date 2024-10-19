@@ -9,8 +9,6 @@ export default function SupplyDetails({ id_shelter }) {
   async function handleResponse() {
     try {
       const res = await GetData(id_shelter);
-      console.log(res);
-      console.log(res.supplies);
       setSupplies(res.supplies);
     } catch (error) {
       console.error("Erro ao carregar os dados:", error);
