@@ -14,7 +14,6 @@ export default function ShelterDetails({ id }) {
     try {
       const res = await GetData(id);
       setShelterDetails(res.shelter);
-      console.log(res)
     } catch (error) {
       console.error("Erro ao carregar os dados:", error);
     } finally {
@@ -35,12 +34,12 @@ export default function ShelterDetails({ id }) {
           <div className={Style.shelterInfo}>
             <h1 className={Style.shelterMainTitle}>Shelter Details</h1>
             <div style={{display: "flex", flexDirection: "row", flexWrap: "wrap", justifyContent: "space-between"}}>
-              <UserDetails user={shelterDetails.ShelterAdmin} />
+              <UserDetails user={shelterDetails.ShelterAdmin}/>
               <AddressDetails address={shelterDetails.ShelterAddress}/>
               <SupplyDetails id_shelter={id}/>
             </div>
             <div>
-              <PeopleDetails people={''} />
+              <PeopleDetails id_shelter={id} />
             </div>
           </div>
         )}

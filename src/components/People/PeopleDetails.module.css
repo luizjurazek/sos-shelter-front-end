@@ -1,0 +1,77 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 100%;
+}
+
+.peopleContainer {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  width: 95%;
+  margin: 0 auto;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  padding: 20px;
+  border-radius: 10px;
+  border: 1px solid #CFCFCF;
+  background-color: #fff;
+}
+
+.mainTitle {
+  font-size: 1.5em;
+  margin-top: 10px;
+  color: #333;
+  font-weight: 500;
+}
+
+.peopleHeadTitle {
+  display: grid;
+  grid-template-columns: 0.3fr 1fr 1fr 1fr 1fr 1fr 0.3fr;
+  justify-content: space-between;
+  gap: 10px;
+
+  font-weight: bold;
+  color: #555;
+  margin-top: 15px;
+  margin-bottom: 5px;
+  padding: 0px 20px 0px 10px;
+}
+
+.peopleInfo {
+  display: grid;
+  grid-template-columns: 0.3fr 1fr 1fr 1fr 1fr 1fr 0.3fr;
+  justify-content: space-between;
+  gap: 10px;
+  color: #555;
+  margin-top: 15px;
+  margin-bottom: 5px;
+  padding: 0px 20px 0px 10px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.noPeopleAvailable {
+  color: #777777;
+  padding: 10px;
+}
+
+.actionsName {
+  text-align: center;
+}
+
+.actionsIcons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.actionsIcons button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.actionsIcons:first-child {
+  margin-right: 15px;
+}

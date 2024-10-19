@@ -3,6 +3,9 @@ import Style from "./UserDetails.module.css"; // Vamos assumir que temos um arqu
 import UserImg from "../../assets/img/users/perfil.png";
 
 export default function UserDetails({ user }) {
+  // Fazer a requisição para encontrar o admin do shelter aqui dentro
+
+
   let day, month, year;
   if(user !== null){
     [year, month, day] = user.birthday.split("-");
